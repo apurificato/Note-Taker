@@ -1,5 +1,3 @@
-// const express = require('express');
-
 let noteForm;
 let noteTitle;
 let noteText;
