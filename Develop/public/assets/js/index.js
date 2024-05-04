@@ -1,4 +1,4 @@
-const express = require('express');
+// const express = require('express');
 
 let noteForm;
 let noteTitle;
@@ -74,6 +74,7 @@ const handleNoteSave = () => {
       getAndRenderNotes();
       renderActiveNote();
     });
+
 };
 
 const handleNoteDelete = (id) => {
