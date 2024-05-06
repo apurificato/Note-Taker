@@ -5,10 +5,10 @@ const path = require('path');
 const router = express.Router();
 
 // Define the path to the database file
-const dbFilePath = path.join(__dirname, 'db.json');
+const dbFilePath = path.join(__dirname, '../db/db.json');
 
 // Route to get all notes
-router.get('/api/notes', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const data = await fs.readFile(dbFilePath, 'utf8');
         res.json(JSON.parse(data));
@@ -19,7 +19,7 @@ router.get('/api/notes', async (req, res) => {
 });
 
 // Route to add a new note
-router.post('/api/notes', async (req, res) => {
+router.post('/', async (req, res) => {
     const newNote = req.body;
     
     try {
