@@ -1,6 +1,8 @@
 # Note Taker Application
 Small application built using Node.js and Express.js that accepts user input on the front-end and stringifies it into a JSON and injects data into a JSON array found in a database file.
 
+Live Deployment on Render: https://note-taker-s8qu.onrender.com/
+
 ![GitHub license](https://img.shields.io/badge/License-MIT-brightgreen.svg)
 
 ## Description
@@ -35,7 +37,7 @@ This Note Taker application program was built off of some starter code (HTML, CS
 - Render - cloud infrastructure used to host and deploy live site (Render.com)
 
 ## How to Use
-Go to live version of the application that's been deployed on Render:
+Go to live version of the application that's been deployed on Render: https://note-taker-s8qu.onrender.com/
 
 Once user is on the main/home page of the application, click "Get Started" button. This will take the user to another page, which is where new notes can be created, based on user input. This page contains a form, allowing the user to input a title and text data for this new note they are creating. Once user has finsihed thier input, they can then click the "save note" button found in the top right side of the navigation/header. If they are not satisfied with the data that is in their form/input fields, they can instead choose to click the "clear form" button instead, which will delete all of the text and data in the form's input fields. They should only do this if they want to start with a new entry (and if they do not wish to save this note entry in their notes list). Once a note is saved, it will then appear in the left-hand column of the page. If there are no notes saved, this column should contain text that reads "No saved notes".
 
