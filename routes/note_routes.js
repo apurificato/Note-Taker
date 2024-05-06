@@ -45,26 +45,49 @@ router.delete('/:id', async (req, res) => {
     try {
         const data = await fs.readFile(dbFilePath, 'utf8');
         let notes = JSON.parse(data);
-        
         // Find the index of the note with the given ID
         const noteIndex = notes.findIndex(note => note.id === noteId);
-        
         if (noteIndex === -1) {
             return res.status(404).json({ error: 'Note not found' });
         }
-        
         // Remove the note from the array
         notes.splice(noteIndex, 1);
-        
         // Write the updated notes array back to the file
         await fs.writeFile(dbFilePath, JSON.stringify(notes, null, 2));
-        
         res.status(200).json({ message: 'Note deleted successfully' });
     } catch (err) {
         console.error(err);
         res.status(500).json({ error: 'Failed to delete note from database' });
     }
 });
+
+// // Route to update a note
+// router.put(':id', async (req, res) => {
+//     const noteId = req.params.id;
+//     const updatedNote = req.body;
+    
+//     try {
+//         const data = await fs.readFile(dbFilePath, 'utf8');
+//         let notes = JSON.parse(data);
+//         // Find the index of the note with the given ID
+//         const noteIndex = notes.findIndex(note => note.id === noteId);
+//         if (noteIndex === -1) {
+//             return res.status(404).json({ error: 'Note not found' });
+//         }
+//         // Update the note with the new content
+//         notes[noteIndex] = {
+//             ...notes[noteIndex],
+//             ...updatedNote
+//         };
+//         // Write the updated notes array back to the file
+//         await fs.writeFile(dbFilePath, JSON.stringify(notes, null, 2));
+//         res.status(200).json({ message: 'Note updated successfully' });
+//     } catch (err) {
+//         console.error(err);
+//         res.status(500).json({ error: 'Failed to update note in database' });
+//     }
+// });
+
 
 
 module.exports = router;
