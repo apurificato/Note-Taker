@@ -40,4 +40,3 @@ router.post('/api/notes', async (req, res) => {
 // Additional routes for updating and deleting notes can be added here
 
 module.exports = router;
-
