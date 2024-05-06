@@ -115,6 +115,8 @@ const renderNoteList = (notes) => {
     notes.forEach((note) => {
       const li = document.createElement('li');
       li.classList.add('list-group-item');
+      // Set data-note attribute with the note object
+      li.setAttribute('data-note', JSON.stringify(note));
       li.innerHTML = `<span class="list-item-title">${note.title}</span>
                       <i class="fas fa-trash-alt float-right text-danger delete-note"></i>`;
       li.addEventListener('click', handleNoteView);
